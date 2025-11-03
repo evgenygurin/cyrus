@@ -19,9 +19,18 @@ export type {
 
 // Constants
 export { DEFAULT_PROXY_URL } from "./constants.js";
+// Dependency injection
+export * from "./di/index.js";
 // Domain layer exports
 export * from "./domain/Result.js";
 export * from "./domain/value-objects/index.js";
+// Modern architecture exports
+// Error handling
+export * from "./errors/index.js";
+// Event-driven architecture
+export * from "./events/index.js";
+// Performance monitoring
+export * from "./monitoring/index.js";
 export type {
 	SerializableEdgeWorkerState,
 	SerializedCyrusAgentSession,
@@ -31,6 +40,8 @@ export { PersistenceManager } from "./PersistenceManager.js";
 // Service layer exports
 export * from "./services/ConfigurationService.js";
 export * from "./services/SubscriptionService.js";
+// Validation
+export * from "./validation/index.js";
 // Webhook types
 export type {
 	LinearAgentSessionCreatedWebhook,
