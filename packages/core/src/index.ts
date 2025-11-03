@@ -19,12 +19,18 @@ export type {
 
 // Constants
 export { DEFAULT_PROXY_URL } from "./constants.js";
+// Domain layer exports
+export * from "./domain/Result.js";
+export * from "./domain/value-objects/index.js";
 export type {
 	SerializableEdgeWorkerState,
 	SerializedCyrusAgentSession,
 	SerializedCyrusAgentSessionEntry,
 } from "./PersistenceManager.js";
 export { PersistenceManager } from "./PersistenceManager.js";
+// Service layer exports
+export * from "./services/ConfigurationService.js";
+export * from "./services/SubscriptionService.js";
 // Webhook types
 export type {
 	LinearAgentSessionCreatedWebhook,

@@ -17,6 +17,8 @@ export {
 	type ToolName,
 	writeTools,
 } from "./config.js";
+// Service layer exports
+export * from "./services/LoggingService.js";
 export {
 	type CyrusToolsOptions,
 	createCyrusToolsServer,
