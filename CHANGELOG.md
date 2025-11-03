@@ -4,13 +4,37 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- **Modern Architecture**: Comprehensive refactoring following clean architecture and domain-driven design principles
+- **Error Handling Infrastructure**: Robust error hierarchy with typed errors (`BaseError`, `DomainError`, `InfrastructureError`)
+- **Automatic Retry Logic**: Built-in retry mechanisms with exponential backoff for transient failures
+- **Configuration Validation**: Zod schemas for type-safe, validated configuration at runtime
+- **Dependency Injection**: InversifyJS-based DI container for loose coupling and better testability
+- **Performance Monitoring**: Track operation metrics including duration, memory usage, and percentiles
+- **Event-Driven Architecture**: Domain events and event bus for decoupled component communication
+- **Comprehensive Documentation**: New architecture documentation in `docs/ARCHITECTURE.md`
+
+### Changed
+- Core package now exports modern architecture utilities (errors, validation, DI, monitoring, events)
+- Configuration types now have Zod schemas for runtime validation
+- Error handling standardized across all packages using typed error hierarchy
+- Updated @anthropic-ai/claude-agent-sdk from v0.1.28 to v0.1.30 - see [@anthropic-ai/claude-agent-sdk v0.1.30 changelog](https://github.com/anthropics/claude-agent-sdk-typescript/blob/main/CHANGELOG.md#0130)
+- Updated @anthropic-ai/sdk from v0.67.0 to v0.68.0 - see [@anthropic-ai/sdk v0.68.0 changelog](https://github.com/anthropics/anthropic-sdk-typescript/compare/sdk-v0.67.0...sdk-v0.68.0)
+
 ### Fixed
 - Orchestrator label now enforces orchestrator procedure consistently - issues with the Orchestrator label always use the orchestrator-full procedure, even when receiving results from child sub-agents or processing new messages
 - Suppressed unnecessary error logs when stopping Claude sessions
 
-### Changed
-- Updated @anthropic-ai/claude-agent-sdk from v0.1.28 to v0.1.30 - see [@anthropic-ai/claude-agent-sdk v0.1.30 changelog](https://github.com/anthropics/claude-agent-sdk-typescript/blob/main/CHANGELOG.md#0130)
-- Updated @anthropic-ai/sdk from v0.67.0 to v0.68.0 - see [@anthropic-ai/sdk v0.68.0 changelog](https://github.com/anthropics/anthropic-sdk-typescript/compare/sdk-v0.67.0...sdk-v0.68.0)
+### Technical Improvements
+- Added InversifyJS (v6.0.2) for dependency injection
+- Added Zod (v3.24.4) for schema validation
+- Added reflect-metadata (v0.2.1) for DI metadata
+- Implemented Result pattern for explicit error handling
+- Created comprehensive error hierarchy with context and retry support
+- Added performance monitoring with metrics tracking
+- Implemented event bus for pub/sub messaging
+- All packages build successfully with new architecture
+- All existing tests pass (214 total tests across packages)
 
 ## [0.1.59] - 2025-10-31
 
