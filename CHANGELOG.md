@@ -12,6 +12,9 @@ All notable changes to this project will be documented in this file.
 - **Dependency Injection**: InversifyJS-based DI container for loose coupling and better testability
 - **Performance Monitoring**: Track operation metrics including duration, memory usage, and percentiles
 - **Event-Driven Architecture**: Domain events and event bus for decoupled component communication
+- **Refactoring Infrastructure**: Comprehensive refactoring plan and guidelines in `docs/REFACTORING_PLAN.md`
+- **PromptBuilder Service**: Extracted prompt assembly logic into dedicated, testable service
+- **Command Pattern Examples**: Created Command pattern infrastructure for CLI with examples
 - **Comprehensive Documentation**: New architecture documentation in `docs/ARCHITECTURE.md`
 
 ### Changed
@@ -33,8 +36,13 @@ All notable changes to this project will be documented in this file.
 - Created comprehensive error hierarchy with context and retry support
 - Added performance monitoring with metrics tracking
 - Implemented event bus for pub/sub messaging
+- **Refactoring Framework**: Established patterns and examples for ongoing codebase refactoring
+  - Created PromptBuilder service (reduced EdgeWorker complexity by ~150 lines)
+  - Implemented Command pattern infrastructure for CLI extensibility
+  - Added comprehensive unit tests for new services (10 new tests for PromptBuilder)
+  - Documented refactoring methodology based on Martin Fowler's catalog and Clean Code principles
 - All packages build successfully with new architecture
-- All existing tests pass (214 total tests across packages)
+- All existing tests pass (134 tests in edge-worker, 224 total across all packages)
 
 ## [0.1.59] - 2025-10-31
 
